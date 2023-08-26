@@ -1,0 +1,8 @@
+const hprose = require('hprose');
+const client = hprose.Client.create('http://localhost:8083/');
+
+client.invoke('ping', [], function(result) {
+  console.log(result); // prints the IP address
+}, function(error) {
+  console.error(error);
+});
